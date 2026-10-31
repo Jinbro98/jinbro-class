@@ -50,10 +50,13 @@ skills/jinbro-class/
 │  ├─ concepts.md           수업 개념 설명
 │  └─ app-guide.md          데스크톱 앱 버튼 지도 · 막힘 해결표
 └─ assets/
-   ├─ 예시자료/              예시 제품 '아침결 그래놀라'(가상) 소개서 · 후기 · 인터뷰
-   └─ 따라잡기/              앞 실습을 놓쳤을 때 쓰는 예시 결과 파일
-starter-kit/marketing-agent/ 오후 실습용 마케팅 에이전트 스타터 키트
+   ├─ sample/               예시 제품 '아침결 그래놀라'(가상) 소개서 · 후기 · 인터뷰
+   └─ catchup/              앞 실습을 놓쳤을 때 쓰는 예시 결과 파일
 ```
+저장소 안 파일 이름은 어떤 압축 프로그램으로 받아도 깨지지 않게 모두 영어로 두었습니다. 코치가 수강생 폴더에 복사할 때 한글 이름으로 바꿉니다.
+
+### 오후 스타터 키트
+마케팅 에이전트 스타터 키트(`marketing-agent`)는 [Releases](https://github.com/Jinbro98/jinbro-class/releases/latest)에 zip으로 올려 두었습니다: [marketing-agent-starter-kit.zip](https://github.com/Jinbro98/jinbro-class/releases/latest/download/marketing-agent-starter-kit.zip). 받아서 더블클릭으로 풀고 바탕화면에 두세요.
 
 ## 실습 순서
 오전 클로드코드 입문: 1 설치 · 2 첫 실행 · 3 수업 코치 설치 · 4 첫 업무 · 5 Plan 모드 · 6 컨텍스트 · 7 CLAUDE.md · 8 규칙 비교 · 9 내 첫 스킬 · 10 커넥터 · 11 플러그인 · 12 서브에이전트 · 13 오전 종합
@@ -66,6 +69,6 @@ starter-kit/marketing-agent/ 오후 실습용 마케팅 에이전트 스타터 �
 
 ## 라이선스
 - 수업 자료(스킬 안내 · 프롬프트 팩 · 예시 자료)는 김진형(jinbro)의 저작물입니다. 수강생 개인 학습용으로 자유롭게 쓰세요
-- `starter-kit/marketing-agent/.claude/skills/`의 마케팅 스킬 7개는 [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)(MIT)에서 가져왔습니다. 라이선스 전문은 `starter-kit/marketing-agent/LICENSES/`
+- 스타터 키트 zip 안 `.claude/skills/`의 마케팅 스킬 7개는 [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)(MIT)에서 가져왔습니다. 라이선스 전문은 키트 안 `LICENSES/`
 
 문의: 리부팅랩 카카오채널
