@@ -10,17 +10,32 @@
 
 Claude 데스크톱 앱의 Code 탭(또는 터미널 클로드코드)과 Claude Pro 이상 구독이 필요합니다.
 
-## 설치
+## 설치 (git 필요 없음)
 
 ### 방법 1 · 클로드에게 설치 시키기 (추천)
-데스크톱 앱 Code 탭에서 아무 폴더나 열고 입력창에:
+데스크톱 앱 Code 탭에서 실습 폴더(바탕화면의 빈 폴더 `my-agent`)를 열고 입력창에:
 ```
-https://github.com/Jinbro98/jinbro-class 의 수업 코치 스킬을 내 개인 스킬 폴더에 설치해 줘.
-저장소의 skills/jinbro-class 폴더를 ~/.claude/skills/jinbro-class 로 복사하면 돼
+https://github.com/Jinbro98/jinbro-class 의 README를 보고 수업 코치 스킬을 설치해 줘
 ```
-허락 질문이 뜨면 읽고 허용합니다. 끝나면 **새 세션**(+ New)을 열고 `/jinbro-class`.
+설치 명령을 실행해도 되냐고 물으면 읽고 허용합니다. 끝나면 **새 세션**(+ New)을 열고 `/jinbro-class`.
 
-### 방법 2 · 플러그인으로
+### 방법 2 · 한 줄 명령 (터미널에 붙여 넣기)
+맥 (터미널 앱) · 리눅스 · 윈도우 Git Bash:
+```
+curl -fsSL https://raw.githubusercontent.com/Jinbro98/jinbro-class/main/install.sh | bash
+```
+윈도우 (PowerShell):
+```
+irm https://raw.githubusercontent.com/Jinbro98/jinbro-class/main/install.ps1 | iex
+```
+`~/.claude/skills/jinbro-class`(윈도우는 `%USERPROFILE%\.claude\skills\jinbro-class`)에 설치되고, 이미 있으면 새 버전으로 바뀝니다.
+
+### 클로드가 설치할 때 (Claude에게 주는 안내)
+1. 운영체제와 쓸 수 있는 셸을 보고 위 **방법 2**의 명령 하나만 실행한다. 맥 · 리눅스 · Bash가 되는 윈도우는 `install.sh` 줄, PowerShell만 되는 윈도우는 `install.ps1` 줄
+2. 명령이 막히면 같은 일을 직접 한다: 이 저장소의 `skills/jinbro-class` 폴더 전체를 `~/.claude/skills/jinbro-class`로 복사 (git이 없으면 `https://github.com/Jinbro98/jinbro-class/archive/refs/heads/main.zip`을 받아 풀기)
+3. 끝나면 사용자에게 **새 세션**(+ New)을 열고 실습 폴더를 고른 뒤 `/jinbro-class`를 입력하라고 안내한다. 실습 자료는 코치를 처음 부를 때 그 폴더에 깔린다
+
+### 방법 3 · 플러그인으로
 입력창(또는 터미널 클로드코드)에 한 줄씩:
 ```
 /plugin marketplace add Jinbro98/jinbro-class
@@ -28,8 +43,20 @@ https://github.com/Jinbro98/jinbro-class 의 수업 코치 스킬을 내 개인 
 ```
 플러그인으로 설치하면 이름이 `/jinbro-class:jinbro-class`로 보입니다.
 
-### 방법 3 · 직접 복사
+### 방법 4 · 직접 복사
 이 페이지의 **Code → Download ZIP**으로 받아 압축을 풀고, `skills/jinbro-class` 폴더를 내 홈 폴더의 `.claude/skills/` 안에 넣습니다. (`.claude`는 숨김 폴더. 맥은 Cmd + Shift + .)
+
+## 처음 부르면: 실습 자료 설치
+코치를 처음 부르면 지금 폴더에 오전 실습 자료를 깝니다 (명령 허락 질문 한 번). 이미 있는 파일은 덮어쓰지 않습니다.
+```
+my-agent/
+├─ 자료/                  아침결_소개서.md · 고객후기.md · 고객인터뷰.md (예시 제품 '아침결 그래놀라', 가상)
+├─ 프롬프트팩.md          오늘 실습 문장 모음
+├─ 실습안내.md            폴더 안내
+├─ 수업코치/jinbro-class/ 코치 사본 (코치가 안내 파일을 여기서 읽음)
+└─ .claude/settings.json  웹 검색 허용
+```
+직접 깔고 싶으면 실습 폴더에서 `bash ~/.claude/skills/jinbro-class/scripts/setup.sh` (윈도우 PowerShell은 `powershell -ExecutionPolicy Bypass -File $HOME\.claude\skills\jinbro-class\scripts\setup.ps1`).
 
 ## 쓰는 법
 | 입력 | 하는 일 |
@@ -49,7 +76,9 @@ skills/jinbro-class/
 │  ├─ prompt-pack.md        수업 프롬프트 팩 원문
 │  ├─ concepts.md           수업 개념 설명
 │  └─ app-guide.md          데스크톱 앱 버튼 지도 · 막힘 해결표
+├─ scripts/                 실습 자료 설치 (setup.sh · setup.ps1)
 └─ assets/
+   ├─ practice/             실습 폴더에 까는 안내문 · 설정
    ├─ sample/               예시 제품 '아침결 그래놀라'(가상) 소개서 · 후기 · 인터뷰
    ├─ catchup/              오전 실습을 놓쳤을 때 쓰는 예시 결과 파일
    └─ catchup-pm/           오후 실습을 놓쳤을 때 쓰는 예시 결과 파일 (PROFILE.md · 전략 · 결정 기록 · 게시물)

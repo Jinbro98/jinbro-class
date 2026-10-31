@@ -1,0 +1,64 @@
+# 설치 스크립트 시험: 맥 (curl | bash) · 윈도우 PowerShell 5.1 (irm | iex) · 윈도우 Git Bash
+# 실제 사용자 폴더 대신 러너 임시 폴더에 설치해 본다.
+name: test-install
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['install.sh', 'install.ps1', 'skills/jinbro-class/scripts/**', '.github/workflows/test-install.yml']
+
+jobs:
+  mac:
+    runs-on: macos-latest
+    env:
+      JINBRO_CLASS_BRANCH: ${{ github.ref_name }}
+    steps:
+      - name: one-line install
+        run: |
+          export JINBRO_CLASS_DEST="$RUNNER_TEMP/skills/jinbro-class"
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/install.sh" | bash
+          test -f "$JINBRO_CLASS_DEST/SKILL.md"
+      - name: practice setup (twice)
+        run: |
+          mkdir -p "$RUNNER_TEMP/my-agent" && cd "$RUNNER_TEMP/my-agent"
+          bash "$RUNNER_TEMP/skills/jinbro-class/scripts/setup.sh"
+          bash "$RUNNER_TEMP/skills/jinbro-class/scripts/setup.sh"
+          find . -type f -not -path './수업코치/*' | sort
+          test -f 자료/아침결_소개서.md && test -f 자료/고객후기.md && test -f 자료/고객인터뷰.md
+          test -f 프롬프트팩.md && test -f 실습안내.md && test -f .claude/settings.json
+          test -f 수업코치/jinbro-class/SKILL.md
+
+  windows:
+    runs-on: windows-latest
+    env:
+      JINBRO_CLASS_BRANCH: ${{ github.ref_name }}
+    steps:
+      - name: one-line install (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          $PSVersionTable.PSVersion
+          $env:JINBRO_CLASS_DEST = Join-Path $env:RUNNER_TEMP 'skills\jinbro-class'
+          irm "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/install.ps1" | iex
+          if (-not (Test-Path (Join-Path $env:JINBRO_CLASS_DEST 'SKILL.md'))) { throw 'not installed' }
+      - name: practice setup.ps1 (Windows PowerShell 5.1, twice)
+        shell: powershell
+        run: |
+          $t = Join-Path $env:RUNNER_TEMP 'my-agent'
+          New-Item -ItemType Directory -Force $t | Out-Null
+          Set-Location $t
+          $s = Join-Path $env:RUNNER_TEMP 'skills\jinbro-class\scripts\setup.ps1'
+          powershell -NoProfile -ExecutionPolicy Bypass -File $s
+          if ($LASTEXITCODE -ne 0) { throw 'setup failed' }
+          powershell -NoProfile -ExecutionPolicy Bypass -File $s
+          Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch 'jinbro-class' } | ForEach-Object { $_.FullName }
+          function K([int[]]$c) { -join ($c | ForEach-Object { [char]$_ }) }
+          $need = @((K 51088,47308,92,50500,52840,44208,95,49548,44060,49436,46,109,100), (K 54532,47212,54532,53944,54057,46,109,100), (K 49892,49845,50504,45236,46,109,100), '.claude\settings.json', ((K 49688,50629,53076,52824) + '\jinbro-class\SKILL.md'))
+          foreach ($n in $need) { if (-not (Test-Path -LiteralPath (Join-Path $t $n))) { throw "missing: $n" } }
+          Write-Host 'all files present'
+      - name: practice setup.sh (Git Bash)
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/my-agent-bash" && cd "$RUNNER_TEMP/my-agent-bash"
+          bash "$RUNNER_TEMP/skills/jinbro-class/scripts/setup.sh"
+          ls -R . | head -30
+          test -f 자료/아침결_소개서.md && test -f 수업코치/jinbro-class/SKILL.md
