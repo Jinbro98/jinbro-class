@@ -51,12 +51,13 @@ skills/jinbro-class/
 │  └─ app-guide.md          데스크톱 앱 버튼 지도 · 막힘 해결표
 └─ assets/
    ├─ sample/               예시 제품 '아침결 그래놀라'(가상) 소개서 · 후기 · 인터뷰
-   └─ catchup/              앞 실습을 놓쳤을 때 쓰는 예시 결과 파일
+   ├─ catchup/              오전 실습을 놓쳤을 때 쓰는 예시 결과 파일
+   └─ catchup-pm/           오후 실습을 놓쳤을 때 쓰는 예시 결과 파일 (PROFILE.md · 전략 · 결정 기록 · 게시물)
 ```
 저장소 안 파일 이름은 어떤 압축 프로그램으로 받아도 깨지지 않게 모두 영어로 두었습니다. 코치가 수강생 폴더에 복사할 때 한글 이름으로 바꿉니다.
 
 ### 오후 스타터 키트
-마케팅 에이전트 스타터 키트(`marketing-agent`)는 [Releases](https://github.com/Jinbro98/jinbro-class/releases/latest)에 zip으로 올려 두었습니다: [marketing-agent-starter-kit.zip](https://github.com/Jinbro98/jinbro-class/releases/latest/download/marketing-agent-starter-kit.zip). 받아서 더블클릭으로 풀고 바탕화면에 두세요.
+마케팅 에이전트 스타터 키트(`marketing-agent`)는 [Releases](https://github.com/Jinbro98/jinbro-class/releases/latest)에 zip으로 올려 두었습니다: [marketing-agent-starter-kit.zip](https://github.com/Jinbro98/jinbro-class/releases/latest/download/marketing-agent-starter-kit.zip). 받아서 더블클릭으로 풀고 바탕화면에 두세요. 키트 안 `수업코치/`는 이 스킬 사본이라, 코치가 안내 파일을 허락 질문 없이 읽는 데 씁니다 (오전 실습 폴더도 같음).
 
 ## 실습 순서
 오전 클로드코드 입문: 1 설치 · 2 첫 실행 · 3 수업 코치 설치 · 4 첫 업무 · 5 Plan 모드 · 6 컨텍스트 · 7 CLAUDE.md · 8 규칙 비교 · 9 내 첫 스킬 · 10 커넥터 · 11 플러그인 · 12 서브에이전트 · 13 오전 종합
