@@ -1,0 +1,11 @@
+{
+  "name": "jinbro-class",
+  "owner": { "name": "김진형 (jinbro)" },
+  "plugins": [
+    {
+      "name": "jinbro-class",
+      "source": "./",
+      "description": "리부팅랩 × jinbro 수업 실습 코치 (클로드코드 입문 + 마케팅 에이전트 만들기)"
+    }
+  ]
+}

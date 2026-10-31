@@ -1,0 +1,71 @@
+# jinbro-class · 수업 실습 코치
+
+리부팅랩 × jinbro 오프라인 수업 **"클로드코드 입문 + 마케팅 에이전트 만들기"**(2026-11-01)를 따라 하는 스킬입니다.
+설치하고 `/jinbro-class`라고 치면, 클로드가 옆자리 코치처럼 실습을 순서대로 안내합니다.
+
+- 지금 폴더와 만들어진 파일을 보고 어디까지 했는지 알려 주기
+- 실습마다 직접 할 일(앱 버튼 · 새 세션 · 로그인)과 입력할 문장을 나눠 안내하기
+- 끝나면 결과 파일을 읽고 완료 확인, 막히면 해결 방법이나 따라잡기 파일 제안
+- 수업 개념 질문에 답하기 (`/jinbro-class 컨텍스트가 뭐예요?`)
+
+Claude 데스크톱 앱의 Code 탭(또는 터미널 클로드코드)과 Claude Pro 이상 구독이 필요합니다.
+
+## 설치
+
+### 방법 1 · 클로드에게 설치 시키기 (추천)
+데스크톱 앱 Code 탭에서 아무 폴더나 열고 입력창에:
+```
+https://github.com/Jinbro98/jinbro-class 의 수업 코치 스킬을 내 개인 스킬 폴더에 설치해 줘.
+저장소의 skills/jinbro-class 폴더를 ~/.claude/skills/jinbro-class 로 복사하면 돼
+```
+허락 질문이 뜨면 읽고 허용합니다. 끝나면 **새 세션**(+ New)을 열고 `/jinbro-class`.
+
+### 방법 2 · 플러그인으로
+입력창(또는 터미널 클로드코드)에 한 줄씩:
+```
+/plugin marketplace add Jinbro98/jinbro-class
+/plugin install jinbro-class@jinbro-class
+```
+플러그인으로 설치하면 이름이 `/jinbro-class:jinbro-class`로 보입니다.
+
+### 방법 3 · 직접 복사
+이 페이지의 **Code → Download ZIP**으로 받아 압축을 풀고, `skills/jinbro-class` 폴더를 내 홈 폴더의 `.claude/skills/` 안에 넣습니다. (`.claude`는 숨김 폴더. 맥은 Cmd + Shift + .)
+
+## 쓰는 법
+| 입력 | 하는 일 |
+|---|---|
+| `/jinbro-class` | 지금 어디까지 했는지 보고 다음 실습 추천 |
+| `/jinbro-class 6` | 6번 실습부터 안내 (번호 = 수업 화면의 '실습 N' = 프롬프트 팩 번호) |
+| `/jinbro-class 다음` | 다음 실습으로 |
+| `/jinbro-class 막혔어요` | 막힌 곳 해결 |
+| `/jinbro-class MCP가 뭐예요?` | 수업 개념 설명 |
+
+## 들어 있는 것
+```
+skills/jinbro-class/
+├─ SKILL.md                 코치의 역할 · 안내 순서 · 지키는 것
+├─ references/
+│  ├─ practices.md          실습 1~24 안내 (준비 · 직접 할 일 · 완료 확인 · 막히면)
+│  ├─ prompt-pack.md        수업 프롬프트 팩 원문
+│  ├─ concepts.md           수업 개념 설명
+│  └─ app-guide.md          데스크톱 앱 버튼 지도 · 막힘 해결표
+└─ assets/
+   ├─ 예시자료/              예시 제품 '아침결 그래놀라'(가상) 소개서 · 후기 · 인터뷰
+   └─ 따라잡기/              앞 실습을 놓쳤을 때 쓰는 예시 결과 파일
+starter-kit/marketing-agent/ 오후 실습용 마케팅 에이전트 스타터 키트
+```
+
+## 실습 순서
+오전 클로드코드 입문: 1 설치 · 2 첫 실행 · 3 수업 코치 설치 · 4 첫 업무 · 5 Plan 모드 · 6 컨텍스트 · 7 CLAUDE.md · 8 규칙 비교 · 9 내 첫 스킬 · 10 커넥터 · 11 플러그인 · 12 서브에이전트 · 13 오전 종합
+오후 마케팅 에이전트: 14 스타터 키트 · 15 인터뷰 → PROFILE.md · 16 프로필 비교 · 17 전략 · 18 콘텐츠 · 19 결정 기록 · 20 승인 관문 · 21 검색 점검 · 22 다음 날 · 23 지침 고치기 · 24 두 번째 제품
+
+## 약속
+- 코치는 게시 · 발송 · 광고 · 결제를 하지 않고, 비밀번호 · 토큰을 받지 않습니다
+- 파일을 지우거나 덮어쓰기 전에 먼저 묻습니다
+- 권한 모드는 Manual을 권합니다
+
+## 라이선스
+- 수업 자료(스킬 안내 · 프롬프트 팩 · 예시 자료)는 김진형(jinbro)의 저작물입니다. 수강생 개인 학습용으로 자유롭게 쓰세요
+- `starter-kit/marketing-agent/.claude/skills/`의 마케팅 스킬 7개는 [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)(MIT)에서 가져왔습니다. 라이선스 전문은 `starter-kit/marketing-agent/LICENSES/`
+
+문의: 리부팅랩 카카오채널
