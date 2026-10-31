@@ -1,6 +1,6 @@
 {
   "name": "jinbro-class",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "리부팅랩 × jinbro '클로드코드 입문 + 마케팅 에이전트 만들기' 수업 실습 코치. 실습을 순서대로 안내하고 결과 파일로 완료를 확인한다.",
   "author": { "name": "김진형 (jinbro)" },
   "homepage": "https://github.com/Jinbro98/jinbro-class",
