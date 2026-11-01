@@ -12,8 +12,8 @@
 | `../sample/interviews.md` | `자료/고객인터뷰.md` |
 | `../catchup/customer-words.md` | `자료/고객의말.md` |
 | `../catchup/competitors.md` | `자료/경쟁조사.md` |
-| `../catchup/oneline-copy.SKILL.example.md` | `.claude/skills/oneline-copy/SKILL.md` (복사 뒤 1단계를 "지금 제품의 `products/<제품>/PROFILE.md`를 먼저 읽는다 (없으면 `자료/`의 제품 소개 자료)"로 고친다) |
-| `../catchup/CLAUDE.example.md`의 '말투' · '하지 말 것' 줄 | `CLAUDE.md` 맨 아래 '내 규칙' 칸. (예) 두 줄을 이 줄로 바꾼다. 파일 이름 규칙은 옮기지 않는다 |
+| `../catchup/oneline-copy.SKILL.example.md` | `.claude/skills/oneline-copy/SKILL.md` (복사 뒤 '맥락 읽기'의 CLAUDE.md를 "지금 제품의 `products/<제품>/PROFILE.md`"로, 결과 저장 위치를 "`products/<제품>/output/<날짜-주제>/`"로 고친다) |
+| `../catchup/CLAUDE.example.md`의 '3. 브랜드 말투' · '4. 마케팅 글 쓰는 법' · '6. 하지 말 것' 칸 | `CLAUDE.md` 맨 아래 '내 규칙' 칸. (예) 두 줄을 이 줄들로 바꾼다. 제품 맥락(15번 PROFILE.md로)과 결과물 규칙(키트 파일 지도가 우선)은 옮기지 않는다 |
 
 ## 15번 이후 따라잡기 · 예시 제품
 순서대로 쌓입니다. 17을 따라잡으려면 15부터 복사합니다. 16 · 16-2는 뒤 실습의 준비물이 아니어서 따라잡기 파일이 없습니다 (PROFILE.md만 있으면 바로 해 볼 수 있습니다).
@@ -24,6 +24,7 @@
 | 17 전략 | `strategy.md` → `products/achimgyeol/strategy/첫달-성장전략.md` |
 | 18 콘텐츠 | `post-instagram.md` → `products/achimgyeol/output/2026-11-02-3분아침/01_인스타피드.md` (예시 1개. 18번의 3개를 대신하지는 않는다) |
 | 19 결정 기록 | `decisions.md` → `products/achimgyeol/decisions.md` (견본을 덮어쓴다) |
+| 19-2 캠페인 팀원 | `campaign-planner.agent.example.md` → `.claude/agents/campaign-planner.md` (복사 뒤 새 세션에서 맡기기 문장만 직접) |
 
 제품 목록 줄 (`(예) my-cafe` 줄은 그대로 둔다):
 ```

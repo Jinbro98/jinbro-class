@@ -7,6 +7,6 @@
 |---|---|---|
 | product-summary.md | 4 첫 업무 | my-agent/제품요약.md |
 | customer-words.md | 6 컨텍스트 | my-agent/고객의말.md |
-| CLAUDE.example.md | 7 규칙 한 장 | my-agent/CLAUDE.md |
+| CLAUDE.example.md | 7 마케팅 작업실 규칙 | my-agent/CLAUDE.md |
 | oneline-copy.SKILL.example.md | 9 내 첫 스킬 | my-agent/.claude/skills/oneline-copy/SKILL.md |
 | competitors.md | 12 서브에이전트 조사 | my-agent/경쟁조사.md |
